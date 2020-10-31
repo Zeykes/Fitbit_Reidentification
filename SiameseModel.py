@@ -27,18 +27,16 @@ class Recognizer (object) :
 
 			Conv1D( 32, kernel_size=kernel_size_1 , strides=strides , activation=self.leaky_relu ),
 			Conv1D( 32, kernel_size=kernel_size_1, strides=strides, activation=self.leaky_relu),
-			#MaxPooling1D(pool_size=pool_size_1, strides=strides ),
+			MaxPooling1D(pool_size=pool_size_1, strides=strides ),
 
 			Conv1D( 64, kernel_size=kernel_size_2 , strides=strides , activation=self.leaky_relu ),
 			Conv1D( 64, kernel_size=kernel_size_2 , strides=strides , activation=self.leaky_relu ),
-			#MaxPooling1D(pool_size=pool_size_2 , strides=strides),
+			MaxPooling1D(pool_size=pool_size_2 , strides=strides),
 
-			#Flatten(),
+			Flatten(),
 
 			Dense( 64 , activation=activations.sigmoid ),
-            #Dense( 1 , activation=activations.sigmoid )
-            
-            #Flatten()
+            Dense( 1 , activation=activations.sigmoid )
 
 		]
 
